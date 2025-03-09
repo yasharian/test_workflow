@@ -5,7 +5,7 @@ def main() :
 	x.t_() 
 	print(x) 
 	print(tt)  
-	torch.cuda.is_available() 
+	print(torch.cuda.is_available()) 
 
 if __name__ == "__main__" : 
 	print("hello my men ") 
