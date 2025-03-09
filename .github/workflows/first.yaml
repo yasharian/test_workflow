@@ -1,4 +1,4 @@
-kname: first-ci-cd
+name: first-ci-cd
 
 on:
   push:
