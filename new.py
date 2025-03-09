@@ -2,7 +2,7 @@ import torch , numpy
 def main() : 
 	x = torch.tensor([[ i*0.4 for i in range(12)] for j in range(3) ] ) 
 	tt = x.numpy() 
-	tt.t_() 
+	x.t_() 
 	print(x) 
 	print(tt)  
 	torch.cuda.is_available() 
