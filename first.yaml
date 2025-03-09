@@ -1,0 +1,32 @@
+name: first-ci-cd
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-python:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python env.
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install requirements
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Run Python script
+        run: python new.py
+
+      - name: Final message
+        run: echo "bro the task has finished"
